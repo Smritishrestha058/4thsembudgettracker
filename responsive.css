@@ -1,0 +1,59 @@
+@media only screen and (max-width: 1300px){
+    .navbar .list{
+        width: 60%;
+    }
+    .balance-container{
+        width: 28%;
+    }
+}
+@media only screen and (max-width: 1160px){
+    .navbar .list{
+        width: 60%;
+    }
+    .box p, .box2, .budget-container{
+        font-size: 2rem;
+    }
+    .balance-container{
+        width: 28%;
+    }
+}
+@media only screen and (max-width: 1070px){
+    .navbar .list{
+        width: 75%;
+    }
+    .navbar #logo{
+        margin: 1.5rem;
+    }
+    .logout{
+        margin: 1.5rem;
+    }
+    .balance-container{
+        width: 28%;
+    }
+}
+@media only screen and (max-width: 930px){
+    .navbar .list{
+        width: 85%;
+        display: none;
+    }
+    .togglebutton{
+        display: block;
+    }
+    .balance-container{
+        width: 28%;
+    }
+}
+@media only screen and (max-width: 930px){
+    .balance{
+        flex-direction: column;
+       
+    }
+    .balance-container{
+        width: 95%;
+        margin: 1rem 0;
+        flex-direction: row;
+        height: 4rem;
+    }
+}
+
+

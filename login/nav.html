@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+    <link rel="stylesheet" href="style.css">
+    <title>Budget Tracker</title>
+  </head>
+  <body>
+    <div id="navbar" class="navbar">
+      <div id="logo">LOGO</div>
+      <!-- <div class="list">
+        <a href="#Contact">Contact Us</a>
+        <a href="#Services">Calendar</a>
+        <a href="#about">Analysis</a>
+        <a href="#Home">Home</a>
+      </div> -->
+      <div id="Login">
+        <button class="loginbtn">Login</button>
+      </div>
+    </div>
+
+    <div id="front_page" class="front-page">
+      <div class="front-page-content">
+        <div class="content">
+          <div class="heading">
+            <p>My Monthly Finance Planner</p>
+          </div>
+          <div class="para">
+            <p>
+              A tool to help you monitor your income, expenses, savings, and
+              financial goals.
+            </p>
+          </div>
+          <div class="quote">
+            <p>
+              "A budget is telling your money where to go instead of wondering
+              where it went." <br />
+              - Dave Ramsey
+            </p>
+          </div>
+          <div id="buttons">
+            <button id="getStarted" class="loginbtn">Get Started</button>
+            <button class="readbtn" onclick="showabout()">Read More</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <div id="second_page" class="second_page">
+      <div class="help_container">
+        <div id="typewriter"></div>
+      </div>
+    </div> -->
+
+    <div id="about" class="about" style="display: none;">
+      <div class="about-content">
+        <div class="heading">
+          <h1>About Us</h1>
+        </div>
+        <div class="para1">
+          <p>
+            Welcome to Personal Budget Tracker, your trusted partner in managing
+            your finances. Our goal is to help individuals and families achieve
+            financial stability by providing a user-friendly platform where
+            users can track their expenses, set saving goals and better
+            understand their spending habits.
+          </p>
+        </div>
+        <div class="para2">
+          <p>
+            Our Budget Planner app helps you keep a close eye on where your
+            money goes. It lets you set spending limits and savings goals. By
+            using this platform, you can manage your money better, avoid
+            overspending, and save up for things you want. Financial freedom
+            starts with a plan, and we’re here to help you every step of the
+            way.
+          </p>
+        </div>
+        <div class="para3">
+          <p>And Remember, a penny saved is a penny earned.</p>
+        </div>
+      </div>
+      
+    </div>
+
+    <!-- <div class="contact" id="contact">
+      <div class="contact_form">
+        <h1>Contact Us</h1>
+        <form>
+          <div class="input-group">
+            <input type="text" name="Name" id="Name" placeholder="Name" required>
+          </div>
+          <div class="input-group">
+            <input type="email" name="Email" id="Email" placeholder="Email" required>
+          </div>
+          <div class="input-group">
+            <textarea cols="" rows="5" placeholder="Your message here"></textarea>
+          </div>
+          <input type="submit" class="Send" value="Send" name="Send">
+        </form>
+      </div>
+    </div>
+     -->
+    <div class="container" id="signup" style="display: none">
+      <div class="form-header">
+        <a href="javascript:void(0)" class="closeform" onclick="closesignUpForm()">×</a>
+        <h1 class="form-title">Register</h1>
+      </div>
+      <form name="myForm" method="post" action="register.php">
+        <div class="input-group">
+          <i class="fas fa-user"></i>
+          <input
+            type="text"
+            name="fName"
+            id="fName"
+            placeholder="First Name"
+            required
+          />
+          <label for="fname">First Name</label>
+        </div>
+        <div class="input-group">
+          <i class="fas fa-user"></i>
+          <input
+            type="text"
+            name="lName"
+            id="lName"
+            placeholder="Last Name"
+            required
+          />
+          <label for="lName">Last Name</label>
+        </div>
+        <div class="input-group">
+          <i class="fas fa-envelope"></i>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Email"
+            required
+          />
+          <label for="email">Email</label>
+        </div>
+        <div class="input-group">
+          <i class="fas fa-lock"></i>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Password"
+            required
+          />
+          <label for="password">Password</label>
+        </div>
+        <input
+          type="submit"
+          class="btn"
+          value="Sign Up"
+          name="signUp"
+          onclick="return(validate())"
+        />
+      </form>
+      <p class="or">----------or--------</p>
+      <div class="icons">
+        <i class="fab fa-google"></i>
+        <i class="fab fa-facebook"></i>
+      </div>
+      <div class="links">
+        <p>Already Have Account ?</p>
+        <button id="signInButton">Sign In</button>
+      </div>
+    </div>
+
+    <div class="container" id="signIn" style="display: none">
+      <div class="form-header">
+        <a href="javascript:void(0)" class="closeform" onclick="closesignInForm()">×</a>
+        <h1 class="form-title">Sign In</h1>
+      </div>
+      <form method="post" action="register.php">
+        <div class="input-group">
+          <i class="fas fa-envelope"></i>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Email"
+            required
+          />
+          <label for="email">Email</label>
+        </div>
+        <div class="input-group">
+          <i class="fas fa-lock"></i>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Password"
+            required
+          />
+          <label for="password">Password</label>
+        </div>
+        <p class="recover">
+          <a href="#">Recover Password</a>
+        </p>
+        <input type="submit" class="btn" value="Sign In" name="signIn" />
+      </form>
+      <p class="or">----------or--------</p>
+      <div class="icons">
+        <i class="fab fa-google"></i>
+        <i class="fab fa-facebook"></i>
+      </div>
+      <div class="links">
+        <p>Don't have account yet?</p>
+        <button id="signUpButton">Sign Up</button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

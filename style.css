@@ -1,0 +1,505 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Lora:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=New+Amsterdam&display=swap');
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+.progress-bar {
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: 25px;
+    overflow: hidden;
+    margin: 20px 0;
+}
+.progress {
+    height: 25px;
+    background-color: #50abd5;
+    width: 0%; /* Default to 0% */
+    border-radius: 25px 0 0 25px;
+}
+.input-group {
+    margin: 10px 0;
+}
+input[type="number"]{
+    border: none;
+    outline: none;
+    font-size: 20px;
+}
+.box, .budget-container, .transaction-container{
+    background-color: #C0CFB2;
+    color: #695656;
+    padding: 15px;
+    margin: 0 25px;
+    border-radius: 10px;
+    font-size: 2.75rem;
+    font-family: "Ubuntu", sans-serif;
+}
+.box p{
+    margin: 0;
+    font-size: 2.75rem;
+}
+.box2{
+    display: flex;
+    justify-content: space-between;
+    /* display: grid;
+    grid-template-columns: repeat(2, 1fr); */
+    color: #695656;
+    padding: 15px;
+    margin: 0px 10px;
+    border-radius: 10px;
+    font-size: 2.20rem;
+    font-family: "Ubuntu", sans-serif;
+}
+.box2 p{
+    margin: 10px;
+}
+.dashboard {
+    background-color: #f1f1f1;
+    display: grid;
+    gap: 20px;
+    transition: margin-right 0.5s;
+    padding: 0;
+    /* No padding-top or margin-top for now */
+}
+.content-wrapper {
+    padding-top: 6rem; /* Match this with the navbar height */
+}
+.balance{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.balance-container{
+    background-color: #C0CFB2;
+    width: 30%;
+    height: 7.5rem;
+    padding: 1rem;
+    border: none;
+    border-radius: 8px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+.currency{
+    font-size: 30px;
+    padding: 10px;
+}
+/* .transaction-container{
+    display: grid;
+    place-content: center;
+} */
+.transaction-container {
+    padding: 20px; /* add some padding for better layout */
+    margin-top: 15px;
+    background-color: #C0CFB2;
+    color: #695656;
+    border-radius: 10px;
+    font-size: 35px;
+}
+.transaction-header{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    justify-content: space-between;
+}
+.transaction{
+    height: 500px;
+    /* width: 900px; */
+
+}
+.recent_transaction{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.transaction-container p{
+    padding-left: 10px;
+    font-family: sans-serif;
+    font-weight: bold;
+    /* font-size: 50px; */
+}
+.transaction-group{
+    width: 400px;
+    height: 100px;
+    background-color: white;
+    margin: 15px 20px 15px 20px;
+    display: flex;
+    flex-direction: row;
+    border-radius: 7px;
+}
+table{
+    width: 100%;
+}
+thead{
+    background-color: #6c8776;
+    line-height: 50px;
+}
+.navbar{
+    background-color: #cfe8c7;
+    height: 5em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+.navbar .list{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+.togglebutton{
+    display: none;
+    text-decoration: none;
+    color: inherit;
+    float: none;
+    padding: 0;
+    margin: 20px;
+    font-size: 35px;
+}
+.navbar #logo{
+    font-family: "New Amsterdam", sans-serif;
+    font-size: 3rem;
+    font-weight: 400;
+    margin: 3.125rem;
+}
+
+.navbar a:not(.icon){
+text-decoration: none;
+color: black;
+float: right;
+padding: 5px 30px;
+font-size: 25px;
+font-family: "Ubuntu", sans-serif;
+}
+.navbar a:not(.icon):hover{
+background-color: #07001f;
+color: #f1f1f1;
+}
+.logout{
+    margin: 3.125rem;
+}
+#logoutbtn{
+    background-color: hsl(240, 100%, 40%);
+    margin-left: 10px;
+    margin-right: 15px;
+    color: white;
+    font-size: 20px;
+    width: 95%;
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    transition: 0.5s;
+}
+#logoutbtn:hover{
+    background-color: hsl(240, 100%, 70%);
+    color: black;
+}
+.contact{
+margin-top: 10vh;
+height: 90vh;
+width: 100%;
+display: grid;
+place-content: center;
+background-color: #f1f1f1;
+}
+.contact_form{
+height: 500px;
+width: 550px;
+display: grid;
+place-content: center;
+}
+.contact form{
+margin: 0px;
+}
+.contact h1{
+font-family: sans-serif;
+padding: 10px 0px;
+margin: 0;
+}
+.contact .input-group{
+margin: 15px 0px;
+width: 400px;
+}
+.contact .input-group input{
+width: 100%;
+padding: 10px;
+font-size: 1em;
+border: none;
+outline: none;
+border-radius: 5px;
+background-color: #fff;
+color: black;
+}
+input:-webkit-autofill {
+    background-color: #fff !important;
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+.contact input::placeholder {
+color: #745f5f; 
+font-family: "Ubuntu", sans-serif;
+}
+.contact .input-group textarea{
+    font-family: "Ubuntu", sans-serif;
+width: 100%;
+resize: none;
+padding: 10px;
+border: none;
+outline: none;
+
+border-radius: 5px;
+margin: 0;
+}
+.contact .Send{
+width: 40%;
+height: 40px;
+font-size: 1.5em;
+border-radius: 5px;
+border: none;
+outline: none;
+background-color: rgb(36, 36, 155);
+color: white;
+padding: 0;
+transition: 0.3s;
+}
+.Send:hover{
+background-color: rgb(49, 57, 214);
+color: black;
+}
+.top {
+    margin: 0;
+    background-color: #148210;
+    height: 90px;
+    width: 480px;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -20%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+.form {
+    display: none;
+    height: 95vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 70px;
+}
+.first {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 40px;
+}
+input,
+select {
+    padding: 5px;
+    font-size: 25px;
+    border-radius: 5px;
+    width: 300px;
+}
+textarea {
+    margin: 20px 30px;
+    padding: 15px;
+    font-size: 25px;
+    color: #5489DC;
+    height: 150px;
+    width: 93%;
+    border-radius: 10px;
+}
+.add {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0;
+    right: 0;
+    overflow-x: hidden; /* Disable horizontal scroll */
+    overflow-y: hidden;  
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
+  }
+#addform{
+    background-color: #f1f1f1;
+    height: 100vh;
+    width: 500px;
+    margin: 0;
+}
+.form-header{
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+.closeform{
+    display: flex;
+    font-size: 40px;
+    margin: 0px 20px 15px 0px;
+    justify-content: flex-end;
+    text-decoration: none;
+}
+h1{
+    padding: 10px;
+    margin: 0;
+    font-size: 30px;
+}
+.input-group{
+    padding: 10px;
+    font-size: 20px;
+    margin: 0;
+}
+input{
+    border: none;
+    font-size: 20px;
+    padding: 10px;
+    width: 95%;
+}
+.input-group select{
+    border: none;
+    width: 100%;
+}
+label{
+    padding: 10px 0;
+}
+textarea{
+    width: 95%;
+    padding: 10px;
+    margin: 0;
+    height: 100px;
+}
+#btn{
+    background-color: hsl(240, 100%, 40%);
+    margin-left: 10px;
+    margin-right: 15px;
+    color: white;
+    font-size: 20px;
+    width: 95%;
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    transition: 0.5s;
+}
+#setbudgetbtn{
+    margin-left: 10px;
+    font-size: 20px;
+    border: none;
+    outline: none;
+    width: 250px;
+    height: 40px;
+    background-color: hsl(240, 100%, 40%);
+    color: white;
+    border-radius: 5px;
+}
+#setbudgetbtn:hover{
+    background-color: hsl(240, 100%, 70%);
+    color: black;
+}
+#btn:hover{
+    background-color: hsl(240, 100%, 70%);
+    color: black;
+}
+.overview{
+    height: 85vh;
+    width: 100%;
+}
+h3{
+    margin: 25px;
+    font-size: 30px;
+    font-family: "Ubuntu", sans-serif;
+}
+canvas{
+    margin: 50px;
+}
+#piechart{
+    height: 400px;
+    width: 400px;
+    font-size: 25px;
+}
+#linechart{
+    height: 1000px;
+    width: 1200px;
+    margin: 50px;
+}
+.budget{
+    z-index: 1000;
+    position: fixed;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+} 
+.budgetform{
+    background-color: #f1f1f1;
+    box-shadow: 10px 10px 5px lightblue;
+    padding: 16px;
+    width: 350px;
+}
+.budget .input-group{
+    margin: 10px;   
+}
+.budget label{
+    font-size: 20px;
+    margin: 10px 0;
+}
+.budget input{
+    padding: 5px;
+    font-size: 20px;
+    width: 95%;
+    margin: 10px 0;
+}
+#budgetbtn{
+    display: block;
+    width: 150px;
+    margin: 6px auto;
+    padding: 4px;
+    font-size: 20px;
+}
+.sidenav{
+    height: 100vh;
+    width: 100%;
+    background-color: rgb(0, 0, 0, 0.7);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+}
+.sidenav a{
+    color: white;
+    text-decoration: none;
+    font-size: 40px;
+    margin: 10px;
+    transition: 0.3s;
+
+}
+.icon{
+    font-size: 40px;
+    margin: 10px;
+}
+.sidenav .icon{
+    display: flex;
+    justify-content: end;
+    font-size: 70px;
+    position: absolute;
+    top: 20px;
+    right: 50px;
+}
