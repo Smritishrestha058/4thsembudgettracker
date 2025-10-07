@@ -1,0 +1,22 @@
+@media only screen and (max-width: 768px){
+    .nav-links{
+        display: none;
+    }
+    .navbar .togglebutton{
+        display: block;
+    }
+    .navbar{
+        height: 100px;
+        flex-direction: row;
+    }
+    .navbar .logo img{
+        margin: 20px;
+    }
+    .profile-icon{
+        margin: 20px;
+    }
+    .content-wrapper{
+        margin-top: 10px;
+
+    }
+}

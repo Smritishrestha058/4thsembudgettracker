@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Form</title>
+    <style>
+        .money-icon {
+            position: absolute;
+            font-size: 24px;
+            z-index: 1000; 
+            animation: fly 1s ease-in-out forwards;
+            pointer-events: none; 
+        }
+
+        @keyframes fly {
+            0% {
+                transform: scale(1) translateY(0);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1.5) translateY(-100px); /* Move up and grow */
+                opacity: 0;
+            }
+        }
+
+        /* Additional styling for the form */
+        .expanded-form {
+            padding: 20px;
+            border: 1px solid #ccc;
+            width: 300px;
+            margin: 50px auto;
+            position: relative; /* Ensure absolute positioned elements are contained */
+        }
+    </style>
+</head>
+<body>
+
+<!-- Budget Form -->
+<div id="budgetForm" class="expanded-form">
+    <div class="form-header">
+        <a href="javascript:void(0)" class="closeform" onclick="closebudget()">×</a>
+        <h1 class="form-title">Set Budget</h1>
+    </div>
+    <form class="budgetform" onsubmit="event.preventDefault();"> <!-- Prevent default submission -->
+        <div class="input-group">
+            <label for="total-budget">Select or Enter Budget</label>
+            <div class="budget-options">
+                <button type="button" class="budget-option" onclick="setBudgetAmount(500)">500</button>
+                <button type="button" class="budget-option" onclick="setBudgetAmount(1000)">1000</button>
+                <button type="button" class="budget-option" onclick="setBudgetAmount(5000)">5000</button>
+                <button type="button" class="budget-option" onclick="setBudgetAmount(10000)">10000</button>
+            </div>
+            <input type="number" id="total-budget" placeholder="Enter total budget" required>
+        </div>
+        <button type="submit" id="budgetbtn" class="set-budget-btn">Ok</button>
+    </form>
+</div>
+
+<!-- JavaScript for Animation -->
+<script>
+function setBudgetAmount(amount) {
+    // Log the amount being set
+    console.log(`Setting budget to: ${amount}`);
+
+    // Set the budget amount
+    document.getElementById('total-budget').value = amount;
+
+    // Create the flying money animation
+    const moneyIcon = document.createElement('span');
+    moneyIcon.textContent = '💸'; // Emoji for money
+    moneyIcon.classList.add('money-icon');
+
+    // Append to the body
+    document.body.appendChild(moneyIcon);
+
+    // Position the money icon randomly within the viewport
+    const randomTop = Math.random() * (window.innerHeight - 100); // Random vertical position
+    const randomLeft = Math.random() * (window.innerWidth - 100); // Random horizontal position
+    moneyIcon.style.top = `${randomTop}px`;
+    moneyIcon.style.left = `${randomLeft}px`;
+
+    // Log the positioning of the money icon
+    console.log(`Money icon positioned at: ${moneyIcon.style.left}, ${moneyIcon.style.top}`);
+
+    // Remove the money icon after the animation completes
+    setTimeout(() => {
+        if (moneyIcon && moneyIcon.parentNode === document.body) {
+            document.body.removeChild(moneyIcon);
+            console.log('Money icon removed');
+        }
+    }, 1000); 
+}
+</script>
+
+</body>
+</html>

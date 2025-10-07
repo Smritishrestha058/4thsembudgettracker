@@ -1,0 +1,56 @@
+<div id="budgetForm" class="expanded-form">
+    <div class="form-header">
+        <a href="javascript:void(0)" class="closeform" onclick="closebudget()">×</a>
+        <h1 class="form-title">Set Budget</h1>
+    </div>
+    <form class="budgetform">
+        <div class="input-group">
+            <label for="total-budget">Select or Enter Budget</label>
+            <div class="budget-options">
+                <button type="button" class="budget-option" onclick="setBudgetAmount(500)">500</button>
+                <button type="button" class="budget-option" onclick="setBudgetAmount(1000)">1000</button>
+                <button type="button" class="budget-option" onclick="setBudgetAmount(5000)">5000</button>
+                <button type="button" class="budget-option" onclick="setBudgetAmount(10000)">10000</button>
+            </div>
+            <input type="number" id="total-budget" placeholder="Enter total budget" required>
+        </div>
+
+        <div class="input-group">
+            <label for="start-date">Set Start Date</label>
+            <input type="date" id="start-date" required>
+        </div>
+
+        <div class="input-group">
+            <label for="category-budget">Allocate to Categories:</label>
+            <select id="category-budget">
+                <option value="housing">Housing</option>
+                <option value="utilities">Utilities</option>
+                <option value="groceries">Groceries</option>
+                <option value="entertainment">Entertainment</option>
+                <option value="savings">Savings</option>
+                <option value="other">Other</option>
+            </select>
+            <input type="number" id="category-amount" placeholder="Enter amount for category">
+            <button type="button" class="budget-option" onclick="addCategory()">Add</button>
+        </div>
+        <ul id="category-list"></ul>
+
+        <div class="input-group">
+            <label for="reminder-threshold">Set Reminder Threshold:</label>
+            <input type="number" id="reminder-threshold" placeholder="Enter % threshold (e.g., 80)">
+            <button type="button" class="budget-option" onclick="setReminder()">Set Reminder</button>
+        </div>
+
+        <div class="input-group">
+            <label for="saving-goal">Set a Savings Goal:</label>
+            <input type="number" id="saving-goal" placeholder="Enter saving goal (e.g., Rs. 5000)">
+        </div>
+
+        <div class="input-group">
+            <h3>Budgeting Tip:</h3>
+            <p id="budget-tip">Tip: Consider reducing your entertainment expenses to save more!</p>
+        </div>
+
+        <button type="submit" id="budgetbtn" class="set-budget-btn">Ok</button>
+    </form>
+</div>

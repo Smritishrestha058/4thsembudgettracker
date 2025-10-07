@@ -1,0 +1,1225 @@
+
+/* Reset styles for consistency across browsers */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General body and font styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #EDE8DC; 
+    color: #333; 
+    overflow-x: hidden;
+}
+
+/* Navbar styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 13px;
+    background-color: #A5B68D;
+    color: #fff;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 800;
+
+}
+
+.navbar .logo img {
+    max-height: 50px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: 500;
+    transition: color 0.3s;
+    padding: 5px 15px;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    background-color: hsl(85, 22%, 50%);
+    border-radius: 10%;
+    color: floralwhite;
+}
+
+.navbar .togglebutton{
+    display: none;
+    text-decoration: none;
+    color: inherit;
+    float: none;
+    padding: 0;
+    margin: 20px;
+    font-size: 40px;
+}
+
+.sidenav{
+    height: 100vh;
+    width: 100%;
+    background-color: rgb(0, 0, 0, 0.7);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.sidenav a{
+    color: white;
+    text-decoration: none;
+    font-size: 40px;
+    margin: 10px;
+    transition: 0.3s;
+}
+
+.icon{
+    font-size: 40px;
+    margin: 10px;
+}
+
+.sidenav .icon{
+    display: flex;
+    justify-content: end;
+    font-size: 70px;
+    position: absolute;
+    top: 20px;
+    right: 50px;
+}
+
+.profile-menu {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+
+.profile-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #fff;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    margin-top: 100px;
+}
+
+.profile-menu:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+
+.dashboard {
+    padding: 100px 20px; /* Reduced padding for a cleaner look */
+    max-width: 1700px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Welcome section styling */
+.welcome-section {
+    background: linear-gradient(135deg, #12524add, #C1CFA1);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+    margin-bottom: 30px;
+}
+
+.welcome-section h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.welcome-section p {
+    font-size: 1.4rem;
+    margin-top: 15px;
+    color: #ffffff;
+}
+
+/* Summary section styling with horizontal balance cards */
+.summary-section {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Balance Card Layout */
+.balance-card-container {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.balance-card {
+    flex: 1;
+    background-color: #f4f7fa;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    border: 1px solid #ddd;
+}
+
+.balance-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+}
+
+.balance-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #264653;
+    margin-bottom: 15px;
+}
+
+.balance-details {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.currency {
+    font-size: 2.5rem;
+    color: #e63946;
+}
+
+.remaining_balance, 
+.expenses, 
+.income {
+    font-size: 2.4rem;
+    font-weight: bold;
+    color: #264653;
+}
+
+/* Line Chart Section */
+.linechart-section {
+    position: relative;
+    background: linear-gradient(135deg, #f4f7fa, #e9ecef);
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    overflow: hidden;
+    transition: background 0.5s ease;
+    margin-bottom: 30px;
+    margin-top: 50px;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1400px;
+}
+
+
+.linechart-section:hover {
+    background: linear-gradient(135deg, #fcfcfc, #8aeee37c);
+}
+
+.linechart-section .section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #264653;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 2;
+}
+
+.lineChart-container {
+    position: relative;
+    max-width: 100%;
+    margin: 10px auto;
+    /* height: 300px; */
+}
+
+#linechart{
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    animation: drawLine 2s ease-in-out;
+}
+
+@keyframes drawLine {
+    0% {
+        stroke-dasharray: 0, 100%;
+    }
+    100% {
+        stroke-dasharray: 100%, 0;
+    }
+}
+
+.inspirational-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.5rem;
+    font-weight: 600;
+    z-index: 3;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+    animation: fadeText 4s infinite alternate;
+}
+
+@keyframes fadeText {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.overview-btn {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background-color: #c7e0ea;
+    color: #ffffff;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    z-index: 3;
+}
+
+.overview-btn:hover {
+    background-color: #2a9d8f;
+}
+
+/* Budget and Upcoming Expenses Container */
+.budget-expenses-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-top: 50px;
+    width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Budget Status Container */
+.budget-status-container {
+    background: linear-gradient(135deg, #2b531dd6, #f8f8f8);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.budget-status-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Section Title */
+.section-title {
+    font-size: 2rem;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+/* Budget Summary */
+.budget-summary {
+    display: flex;
+    color: #000000;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.budget-label {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #000000;
+    margin-bottom: 15px;
+}
+
+.budget-amount {
+    font-size: 1.2rem;
+    font-weight: 20px;
+    color: #000000;
+    text-align: center;
+    display: block;
+    margin-top: 10px;
+}
+
+/* Set Budget Button */
+.set-budget-btn {
+    background-color: #1a341b;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    width: 100%;
+    font-weight: 600;
+    
+}
+
+.set-budget-btn:hover {
+    background-color: #ffffff;
+    /* transform: scale(0.05); */
+    color: #000000;
+}
+
+/* Upcoming Expenses Container */
+.upcoming-expenses-container {
+    background: linear-gradient(135deg, #2b531dd6, #f8f8f8);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    flex: 1;
+}
+
+.upcoming-expenses-container .section-title {
+    color: #fff;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.expense-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.expense-item:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-5px);
+}
+
+.expense-label {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #264653;
+}
+
+.expense-amount {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #3b2a26;
+}
+
+/* Button styling */
+.button-primary {
+    background-color: #2a9d8f;
+    color: #ffffff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.button-primary:hover {
+    background-color: #1d6b59;
+}
+
+
+/* Transaction Container Styles */
+.transaction-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.transaction-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.transaction-header h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #264653;
+}
+
+.add-btn {
+    background-color: #19411f;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-btn:hover {
+    box-shadow: #000000;
+    cursor: pointer;
+    color: #000000;
+
+}
+
+.transaction table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    
+}
+
+.transaction table th, 
+.transaction table td {
+    padding: 12px 15px;
+    text-align: left;
+}
+
+.transaction table th {
+    background-color: #2b531dd6;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.transaction table td {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #ddd;
+    font-size: 0.95rem;
+}
+
+.submit-btn {
+    background-color: #1a3618;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    background-color: #1a3618;
+    color: #ffffff;
+}
+
+/* Budget Form Styles */
+
+/* General form styling for both budgetForm and transactionForm */
+.expanded-form {
+    position: fixed;
+    top: 90px;
+    right: -500px; 
+    width: 100%;
+    max-width: 500px;
+    height: calc(100vh - 80px); 
+    background-color: #fafafc;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    z-index: 100;
+    transition: right 0.5s ease-in-out;
+    overflow-y: auto;
+}
+
+/* When the form is opened */
+.expanded-form.open {
+    right: 0; /* Slide in from right */
+}
+
+.closeform {
+    position: absolute;
+    top: 10px; /* Position from the top of the form */
+    right: 15px; /* Position from the right of the form */
+    font-size: 24px; /* Make the close button large */
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #333; /* Color of the close button */
+    z-index: 200; /* Ensure it stays on top */
+}
+
+/* Additional form styling */
+.budgetform .input-group, .transactionform .input-group {
+    margin-bottom: 20px;
+}
+
+.budgetform input, .transactionform input, 
+.budgetform select, .transactionform select, 
+.budgetform textarea, .transactionform textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin-top: 5px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.form-title {
+    font-size: 24px;
+    color: #333;
+}
+
+
+.budgetform label {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.budgetform input[type="number"],
+.budgetform input[type="datetime-local"],
+.budgetform select {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin-top: 5px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.budget-options {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.budget-option {
+    background-color: #ffce91; 
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.budget-option:hover {
+    background-color: #ffb347;
+}
+
+@keyframes flyMoney {
+    0% {
+        opacity: 0;
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(-200px) scale(1.2);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-400px) scale(1);
+    }
+}
+
+.money-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 2rem;
+    opacity: 0;
+    z-index: 9999;
+    pointer-events: none;
+    transition: all 0.5s ease-in-out;
+}
+
+.fly {
+    animation: flyMoney 2s forwards ease-in-out;
+}
+
+
+
+/* Budget Tip Section */
+.budgetform .input-group h3 {
+    font-size: 18px;
+    color: #ff6f61;
+    margin-bottom: 8px;
+}
+
+.budgetform .input-group p {
+    font-size: 14px;
+    color: #777;
+}
+
+
+/* Add responsive behavior
+@media (max-width: 768px) {
+    #budgetForm {
+        padding: 20px;
+        max-width: 100%;
+    }
+
+    .budget-options {
+        flex-direction: column;
+    }
+} */
+
+/* Transaction Form CSS */
+#transactionForm {
+    width: 100%;
+    max-width: 400px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 0 auto;
+    display: none; /* Hidden by default, can be shown with JavaScript */
+}
+
+#transactionForm .form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#transactionForm .form-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+}
+
+#transactionForm .closeform {
+    font-size: 1.5rem;
+    color: #333;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#transactionForm .input-group {
+    margin-bottom: 15px;
+}
+
+#transactionForm .input-group label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+#transactionForm .input-group input,
+#transactionForm .input-group select,
+#transactionForm .input-group textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    transition: border-color 0.3s;
+    outline: none;
+}
+
+#transactionForm .input-group input:focus,
+#transactionForm .input-group select:focus,
+#transactionForm .input-group textarea:focus {
+    color: #ff6f61;
+}
+
+#transactionForm .input-group textarea {
+    resize: none;
+}
+
+#transactionForm .submit-btn {
+    width: 100%;
+    background-color: #ff6f61;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    padding: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#transactionForm .submit-btn:hover {
+    background-color:#db3729;
+}
+
+/* Additional styles for progress bar */
+.progress-container {
+    width: 100%;
+    background-color: #f3f3f3;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.progress-bar {
+    height: 20px;
+    background-color: #4caf50; /* Green color for progress */
+    width: 0; /* Initially set to 0 */
+    border-radius: 5px;
+}
+
+.progress {
+    height: 100%;
+    background-color: inherit; /* Inherit from progress-bar */
+    width: 0; /* Will be set dynamically */
+}
+
+/* Sidebar styling */
+.sidebar {
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f4f9; 
+    padding: 20px;
+    border-radius: 10px; 
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); 
+    font-family: 'Arial', sans-serif;
+    margin-bottom: 20px;
+    opacity: 0; /* Start invisible */
+    animation: fadeIn 0.5s ease-in-out forwards; /* Fade-in animation */
+}
+
+.sidebar h2 {
+    font-size: 18px;
+    color: #333; 
+    margin-bottom: 15px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding-left: 0;
+    text-align: center;
+}
+
+.sidebar ul li {
+    padding: 10px 0; 
+    font-size: 16px;
+    color: #555;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 20px;
+}
+
+.sidebar ul li:last-child {
+    border-bottom: none;
+}
+
+.sidebar ul li:hover {
+    color: #007bff;
+    cursor: pointer;
+}
+
+/* Keyframe animation for fade-in effect */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.95); /* Slightly smaller at the start */
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1); /* Full size at the end */
+    }
+}
+
+/* How Budgeting Helps Section Styling */
+.how-budgeting-helps {
+    background-color: #f9fbfd; /* Soft background color for contrast */
+    padding: 40px 20px; /* Padding for breathing room */
+    border-radius: 10px; /* Rounded corners for a softer look */
+    margin: 40px auto; /* Space above and below the section */
+    max-width: 1450px; /* Limit the width for better readability */
+    text-align: center; /* Center align text for a clean, simple layout */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    font-family: 'Arial', sans-serif;
+}
+
+.how-budgeting-helps h2 {
+    font-size: 28px;
+    color: #333; /* Darker color for heading */
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.how-budgeting-helps p {
+    font-size: 16px;
+    color: #555; /* Medium gray for paragraph text */
+    line-height: 1.8; /* Increase line height for better readability */
+    margin-bottom: 20px;
+}
+
+.how-budgeting-helps p:last-of-type {
+    margin-bottom: 0; /* Remove margin for the last paragraph */
+}
+
+@media (max-width: 768px) {
+    .how-budgeting-helps {
+        padding: 30px 15px; /* Adjust padding for smaller screens */
+        text-align: left; /* Left align text for smaller devices */
+    }
+
+    .how-budgeting-helps h2 {
+        font-size: 24px; /* Reduce heading size for mobile */
+    }
+
+    .how-budgeting-helps p {
+        font-size: 14px; /* Adjust paragraph font size for mobile */
+    }
+}
+
+.contact{
+    margin: 0;
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    place-content: center;
+    background-color: #f1f1f1;
+}
+.contact_form{
+    height: 500px;
+    width: 550px;
+    display: grid;
+    place-content: center;
+}
+.contact form{
+    margin: 0px;
+}
+.contact h1{
+    font-family: sans-serif;
+    padding: 10px 0px;
+}
+  .contact .input-group{
+    margin: 15px 0px;
+    width: 400px;
+  }
+  .contact .input-group input{
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background-color: #fff;
+    color: black;
+  }
+  .contact input::placeholder {
+    color: #745f5f; 
+  }
+  .contact .input-group textarea{
+    width: 100%;
+    resize: none;
+    padding: 10px;
+    border: none;
+    outline: none;
+    font-size: 1.5em;
+    border-radius: 5px;
+  }
+  .contact .Send{
+    width: 40%;
+    height: 40px;
+    font-size: 1.5em;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    background-color: rgb(36, 36, 155);
+    color: white;
+    padding: 0;
+    transition: 0.3s;
+  }
+  .Send:hover{
+    background-color: rgb(49, 57, 214);
+    color: black;
+  }
+.alert, .success {
+    position: absolute;
+    top: 150px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    padding: 8px 0;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.alert {
+    background-color: #f44336;
+    color: #fff;
+}
+
+.success {
+    background-color: #8bc34a;
+    color: #fff;
+}
+
+/* General footer styling */
+.footer {
+    background-color: #122815; /* Dark background for contrast */
+    color: #f4f4f9; /* Light text color */
+    padding: 40px 20px; /* Spacing around the footer */
+    text-align: center; /* Center-align text by default */
+    font-family: 'Arial', sans-serif;
+    margin-top: 40px; /* Space above the footer */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around; /* Distribute sections evenly */
+    align-items: flex-start; /* Align items at the top */
+    flex-wrap: wrap; /* Ensure it wraps on smaller screens */
+    max-width: 1200px; /* Optional max width */
+    margin: 0 auto; /* Center the footer content */
+}
+
+.footer-content div {
+    flex: 1; /* Equal width for each section */
+    padding: 20px;
+    box-sizing: border-box;
+    min-width: 250px; /* Minimum width to avoid too small sections */
+}
+
+.footer h3 {
+    font-size: 18px;
+    color: #fff; /* Make headings more prominent */
+    margin-bottom: 15px;
+}
+
+.footer p, .footer a {
+    font-size: 14px;
+    color: #ccc; /* Slightly dimmed text color */
+    line-height: 1.6;
+}
+
+.footer a {
+    text-decoration: none;
+    color: #00b4d8; /* Accent color for links */
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: #fff; /* Hover effect for links */
+}
+
+.footer ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.footer ul li {
+    margin-bottom: 10px;
+}
+
+.footer ul li a {
+    text-decoration: none;
+    color: #00b4d8;
+    transition: color 0.3s ease;
+}
+
+.footer ul li a:hover {
+    color: #fff;
+}
+
+/* Footer bottom text */
+.footer p {
+    margin-top: 30px;
+    font-size: 12px;
+    color: #aaa;
+    border-top: 1px solid #444;
+    padding-top: 20px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column; /* Stack sections vertically on small screens */
+        text-align: left; /* Left-align for better readability */
+    }
+
+    .footer-content div {
+        margin-bottom: 30px;
+    }
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .balance-card-container,
+    .budget-expenses-container {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar .logo img {
+        max-height: 40px;
+    }
+
+    .navbar .nav-links {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .linechart-section {
+        padding: 15px;
+    }
+
+    .summary-section {
+        padding: 10px;
+    }
+
+    .welcome-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .welcome-section p {
+        font-size: 1rem;
+    }
+
+    .balance-title,
+    .currency,
+    .balance-details span {
+        font-size: 1rem;
+    }
+
+    .set-budget-btn {
+        padding: 10px;
+    }
+
+    .upcoming-expenses-container,
+    .budget-status-container {
+        margin-bottom: 20px;
+    }
+}
+
+.overview-container{
+    /* position: relative; */
+    margin-top: 80px;
+
+}
+.barchart-container{
+    display: flex;
+    justify-content: space-around;
+}
+/* .overview-container canvas{
+    height: 90px;
+} */
+.transaction-history-container{
+    margin: 100px 30px 0 30px;
+    padding: 30px;
+    background-color: #fff;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+#filterform{
+    display: flex;
+    
+    margin: 10px;
+    padding: 10px;
+
+}
+.form-group{
+    display: flex;
+    flex-direction: column;
+    padding-right: 50px;
+}
+.form-group label{
+    font-size: 20px;
+}
+.form-group input{
+    font-size: 25px;
+    width: 350px;
+}
+.form-group Button{
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    background-color: #19411f;
+    color: white;
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.form-group Button:hover{
+    background-color: transparent;
+    border: 1px solid #19411f;
+    color: black;
+}

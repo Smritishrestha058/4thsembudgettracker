@@ -7,24 +7,28 @@
     padding:0;
     box-sizing:border-box;
 }
-body{
-    background:linear-gradient(to right,#e2e2e2,#c9d6ff);
-    position: relative;
-    overflow: hidden;
-    
+
+body {
+  background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+  overflow: hidden;
+  height: 100vh;
 }
-.navbar{
-    background-color: #cfe8c7;    
-    height: 10vh;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 13px;
+  background-color: #A5B68D;
+  color: #fff;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 800;
+
 }
-.navbar #logo{
-    font-family: "New Amsterdam", sans-serif;
-    font-size: 48px;
-    font-weight: 400;
-    margin: 100px;
+.navbar #logo img {
+  max-height: 50px;
 }
 .navbar a{
     text-decoration: none;
@@ -41,11 +45,12 @@ body{
 }
 .front-page::before{
     content: "";
-    background: url("bg.jpg")no-repeat center center/cover;
+    background: url("/4thsembudgettracker/images/bg.jpg") no-repeat center center/cover;
     height: 100vh;
     width: 100%;
     position: absolute;
     z-index: -1;
+    left: 0;
 }
 .loginbtn, .readbtn {
     font-size: 20px;
@@ -75,22 +80,13 @@ body{
     transition: margin-left .5s;
     padding: 16px;
 }
-.container{
-    background:#fff;
-    width:400px;
-    padding:16px;
-    margin: 150px auto;
-    border-radius:10px;
-    box-shadow:0 20px 35px rgba(0,0,1,0.9);
-}
+
 .front-page-content{
     height: 90vh;
     width: 500px;
     display: flex;
     flex-direction: column;
-   justify-content: center;
-   align-items: center;
-    
+    justify-content: center;
 }
 .content{
     margin-left: 100px;
@@ -105,14 +101,6 @@ body{
     font-size: 20px;
     padding: 10px 0px;
     font-family: "Lora", sans-serif;
-}
-form{
-    margin:0 1rem;
-    /* height: 100vh;
-    width: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center; */
 }
 .form-header{
     display: flex;
@@ -149,52 +137,7 @@ input:focus{
     background-color: transparent;
     outline:transparent;
     border-bottom:2px solid hsl(327,90%,28%);
-}
-input::placeholder{
-    color:transparent;
-}
-label{
-    color:#757575;
-    position:relative;
-    left:1.2em;
-    top:-1.3em;
-    cursor:auto;
-    transition:0.3s ease all;
-}
-input:focus~label,input:not(:placeholder-shown)~label{
-    top:-3em;
-    color:hsl(327,90%,28%);
-    font-size:15px;
-}
-.recover{
-    text-align:right;
-    font-size:1rem;
-    margin-bottom:1rem;
-
-}
-.recover a{
-    text-decoration:none;
-    color:rgb(125,125,235);
-}
-.recover a:hover{
-    color:blue;
-    text-decoration:underline;
-}
-.btn{
-    font-size:1.1rem;
-    padding:8px 0;
-    border-radius:5px;
-    outline:none;
-    border:none;
-    width:100%;
-    background:rgb(125,125,235);
-    color:white;
-    cursor:pointer;
-    transition:0.9s;
-}
-.btn:hover{
-    background:#07001f;
-}
+} 
 .or{
     font-size:1.1rem;
     margin: 12px 0px;
@@ -225,17 +168,7 @@ input:focus~label,input:not(:placeholder-shown)~label{
     margin-top:0.9rem;
     font-weight:bold;
 }
-button{
-    color:rgb(125,125,235);
-    border:none;
-    background-color:transparent;
-    font-size:1rem;
-    font-weight:bold;
-}
-button:hover{
-    text-decoration:underline;
-    color:blue;
-}
+
 .about {
     display: none;
     position: fixed;
@@ -270,73 +203,169 @@ button:hover{
     padding: 10px;
     font-family: "Ubuntu", sans-serif;
 }
-  /* body{
-    height: 100vh;
-    width: 100vw;
-    display: grid;
-    place-content: center;
-    background-color: #f1f1f1;
-  } */
-   .contact{
-    margin: 0;
+
+  .form-container{
     height: 100vh;
     width: 100%;
-    display: grid;
-    place-content: center;
-    background-color: #f1f1f1;
-   }
-  .contact_form{
-    height: 500px;
-    width: 550px;
-    display: grid;
-    place-content: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
-  .contact form{
-    margin: 0px;
+.container {
+  background-color: #fff;
+  border-radius: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+  position: relative;
+  overflow: hidden;
+  width: 400px;
+  max-width: 100%;
+  padding: 20px;
+}
+
+.container p {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.3px;
+  margin: 20px 0;
+}
+
+.container span {
+  font-size: 12px;
+}
+
+.container a {
+  color: #333;
+  font-size: 13px;
+  text-decoration: none;
+  margin: 15px 0 10px;
+}
+
+.btn {
+  background: linear-gradient(135deg, #12524add, #C1CFA1);
+  color: #fff;
+  font-size: 12px;
+  padding: 10px 45px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.container form {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 20px;
+  height: 100%;
+}
+
+.container input {
+  background-color: #eee;
+  border: none;
+  margin: 8px 0;
+  padding: 10px 15px;
+  font-size: 13px;
+  border-radius: 8px;
+  width: 100%;
+  outline: none;
+}
+
+.sign-in {
+  left: 0;
+  width: 50%;
+
+}
+
+.sign-up {
+  left: 0;
+  width: 50%;
+}
+
+@keyframes move {
+  0%,
+  49.99% {
+    opacity: 0;
+    z-index: 1;
   }
-  .contact h1{
-    font-family: sans-serif;
-    padding: 10px 0px;
+  50%,
+  100% {
+    opacity: 1;
+    z-index: 5;
   }
-  .contact .input-group{
-    margin: 15px 0px;
-    width: 400px;
-  }
-  .contact .input-group input{
-    width: 100%;
-    padding: 10px;
-    font-size: 1em;
-    border: none;
-    outline: none;
-    border-radius: 5px;
-    background-color: #fff;
-    color: black;
-  }
-  .contact input::placeholder {
-    color: #745f5f; 
-  }
-  .contact .input-group textarea{
-    width: 100%;
-    resize: none;
-    padding: 10px;
-    border: none;
-    outline: none;
-    font-size: 1.5em;
-    border-radius: 5px;
-  }
-  .contact .Send{
-    width: 40%;
-    height: 40px;
-    font-size: 1.5em;
-    border-radius: 5px;
-    border: none;
-    outline: none;
-    background-color: rgb(36, 36, 155);
-    color: white;
-    padding: 0;
-    transition: 0.3s;
-  }
-  .Send:hover{
-    background-color: rgb(49, 57, 214);
-    color: black;
-  }
+}
+
+.social-icons {
+  margin: 20px 0;
+}
+
+.social-icons a {
+  border: 1px solid #ccc;
+  border-radius: 20%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 3px;
+  width: 40px;
+  height: 40px;
+}
+
+.links{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  padding: 0;
+}
+.links button {
+  color: rgb(125, 125, 235);
+  border: none;
+  background-color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+}
+#message{
+  display: none;
+  background-color: #fff;
+  color: #000;
+  position: relative;
+  padding: 2px;
+  padding-left: 10px;
+  margin-top: 5px;
+  margin-left: 10px;
+  margin-bottom: -3px;
+  max-height: 400px;
+  font-family: "Lora", sans-serif;
+  border-radius: 20px;
+}
+#message p{
+  padding: 10px 30px;
+  font-size: 18px;
+}
+.valid{
+  color: green;
+}
+.valid:before{
+  position: relative;
+  left: -35px;
+  /* content: "✓"; */
+}
+.invalid{
+  color: red;
+}
+.invalid:before{
+  position: relative;
+  left: -35px;
+  /* content: "✖"; */
+}
+#strength-text{
+  width: 100%;
+  font-size: 16px;
+  position: relative;
+  text-align: left;
+}
